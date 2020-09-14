@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather app</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
+    <style type="text/css">
+    .bg {background-attachment:fixed; background-repeat: no-repeat; background-position:top right;}
+    </style>
+</head>
+<body>
+  <div class="bg" id="app-wrap">
+    <header>
+      <input type="text" autocomplete="off" class="search-box" id="Changer" placeholder="Search for a city..." />
+    </header>
+    <main>
+      <div></div>
+      <section class="location">
+        <div class="city">London, GB</div>
+        <div class="date">Tuesday 3 March 2020</div>
+      </section>
+      <div class="current">
+        <div class="temp">15<span>°c</span></div>
+        <div class="weather">Sunny</div>
+        <div class="hi-low">13°c / 16°c</div>
+      </div>
+    </main>
+  </div>
+  <script src="public.js"></script>
+  <script type="application/javascript">
+    function changeImg(event)   {
+      if (event.keyCode !== 13) {
+        return
+      } 
+    var myImages = ["images/bg.jpg", "images/big-city.gif","images/cafe.gif", "images/cherries-and-cat.gif", "images/city-sunset.gif", "images/doggo.gif", "images/lights-out.gif", "images/looking-out.gif", "images/on-the-go.gif", "images/sky-city.gif", "images/snow.gif", "images/sunset.gif", "images/training.gif", "images/warterfall-3.gif", "images/wet-train.gif",];
+    var imgShown = document.body.style.backgroundImage;
+    var newImgNumber =Math.floor(Math.random()*myImages.length);
+    document.body.style.backgroundImage = 'url('+myImages[newImgNumber]+')';
+    }
+// var input = document.getElementById("myInput");
+// input.addEventListener("keyup", function(event) {
+//   if (event.keyCode === 13) {
+//    event.preventDefault();
+//    document.getElementById("myImages").click();
+//   }
+//});
+
+    document.getElementById("Changer").addEventListener("keydown", changeImg);
+    </script>
+</body>
+</html>
+
+
